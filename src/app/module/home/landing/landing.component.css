@@ -1,0 +1,12 @@
+.prime-calendar .ui-inputtext {
+  color: #495057 !important;
+  width: 80% !important;
+}
+.prime-calendar.ui-calendar {
+  display: block !important;
+  width: 100% !important;
+}
+.landingpage .bus-body:hover {
+  border-color: #28a745 !important;
+  background-color: #fff !important;
+}

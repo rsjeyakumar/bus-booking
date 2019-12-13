@@ -9,7 +9,6 @@ import { environment } from '../../../environments/environment';
 })
 export class HttpService {
   apiUrl = environment.apiUrl;
-  userDetails = 'user';
   constructor(private http: HttpClient) {
 
   }
@@ -21,17 +20,22 @@ export class HttpService {
   };
 
 
-  createData(url, body) {
-    return this.http.post(url, body, this.httpHeaders);
+  /* POST API logic is done by using createData method and it takes  */
+  createData(endpoints, body) {
+    const url = environment.apiUrl + endpoints;
+    return this.http.post(url, body);
   }
-
-  readData(url) {
+  /* GET API logic is done by using createData method and it takes  */
+  readData(endPoints) {
+    const url = `${this.apiUrl}${endPoints}`;
     return this.http.get(url);
   }
-  updateData() {
 
+  /* UPDATE API logic is done by using createData method and it takes  */
+  updateData() {
   }
 
+  /* Delete API logic is done by using createData method and it takes  */
   delteData() { }
 
 

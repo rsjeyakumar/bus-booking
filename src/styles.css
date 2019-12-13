@@ -7,15 +7,15 @@
   margin-bottom: auto;
 }
 .ing-orange-bg {
-  background-color: #f60;
+  background-color: #005a31;
 }
 .btn,
 input {
-  border-radius: 0px;
+  /* border-radius: 0px; */
 }
 .btn-primary {
-  background-color: #f60;
-  border: 1px solid #f60;
+  background-color: #005a31;
+  border: 1px solid #005a31;
 }
 .btn-primary.disabled,
 .btn-primary:disabled {
@@ -41,7 +41,7 @@ input {
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
   background-color: #ff7b00;
-  border-color: #f60;
+  border-color: #005a31;
   box-shadow: 0 0 0 0.2rem rgba(255, 123, 0, 0.25);
 }
 body,
@@ -51,20 +51,20 @@ html {
   /* font-weight: bold; */
 }
 body a {
-  color: #f60;
+  color: #005a31;
 }
 .white-font {
   color: #fff;
 }
 body .fa {
-  color: #f60;
+  color: #005a31;
 }
 body button .fa {
   color: #fff;
 }
 .alerts {
-  border: 2px solid #f60;
-  background: #f60;
+  border: 2px solid #005a31;
+  background: #005a31;
   color: #fff;
   width: 15px;
   display: inline-block;
@@ -77,4 +77,15 @@ body button .fa {
   bottom: 8px;
   font-weight: bold;
   left: 2px;
+}
+
+.bus-button {
+  margin-top: 30px;
+}
+
+.container {
+  margin-bottom: 30px;
+}
+.greenbottom-border {
+  border-bottom: 3px solid #28a745 !important;
 }

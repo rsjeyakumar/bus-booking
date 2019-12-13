@@ -1,3 +1,4 @@
 export enum EndPoints {
-    userDetails = 'user'
+    Cities = 'cities',
+    Search = 'search'
 }

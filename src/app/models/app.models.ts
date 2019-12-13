@@ -1,6 +1,13 @@
-export interface User {
-    username: string;
-    password: string;
-    emailid: string;
-    id: number;
+export interface RESPONSE {
+    message: string;
+    statusCode: number;
+    getList: [];
 }
+
+
+export interface CITY {
+    id: string;
+    name: number;
+}
+
+

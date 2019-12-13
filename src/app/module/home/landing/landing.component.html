@@ -1,13 +1,117 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm">
-            One of three columns
+<div class="container landingpage">
+    <div class="row ">
+        <div class="col-10 mx-auto">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 py-5">
+                    <form [formGroup]="busSearch">
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="inputEmail4">Source<span class="text-danger">*</span></label>
+                                <div class="form-group">
+                                    <select id="inputState"
+                                        [ngClass]="{'is-invalid': busSearch?.controls?.source?.touched && busSearch?.controls?.source?.invalid}"
+                                        formControlName="source" (change)="cityFilter()" class="form-control ">
+                                        <option selected>Choose...</option>
+                                        <option *ngFor="let city of cityList" [value]="city.name">{{city.name}}</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        <span *ngIf="busSearch?.controls?.source?.errors?.required">Please
+                                            enter correct Userid.</span> </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputPassword4">Destination<span class="text-danger">*</span></label>
+                                <div class="form-group">
+                                    <select id="inputState"
+                                        [ngClass]="{'is-invalid': busSearch?.controls?.destination?.touched && busSearch?.destination?.source?.invalid}"
+                                        formControlName="destination" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option *ngFor="let city of filteredCity" [value]="city.name">{{city.name}}
+                                        </option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        <span *ngIf="busSearch?.controls?.destination?.errors?.required">Please
+                                            enter correct Userid.</span> </div>
+                                </div>
+                            </div>
+                            <!-- </div> -->
+                            <!-- <div class="form-row"> -->
+                            <div class="form-group col-md-3">
+                                <label for="inputAddress">Date<span class="text-danger">*</span></label>
+                                <p-calendar styleClass="prime-calendar" formControlName="date"
+                                    [ngClass]="{'is-invalid': busSearch?.controls?.date?.touched && busSearch?.controls?.date?.invalid}"
+                                    dateFormat="dd/mm/yy" [minDate]="minDate" [showIcon]="true" [maxDate]="maxDate">
+                                </p-calendar>
+                                <div class="invalid-feedback">
+                                    <span *ngIf="busSearch?.controls?.date?.errors?.required">Please
+                                        enter correct Userid.</span> </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <button type="submit" class="btn btn-success bus-button btn-block"
+                                    (click)="searchBus()">Search Bus <i class="fa fa-refresh fa-spin"
+                                        *ngIf="searchSpin"></i></button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
         </div>
-        <div class="col-sm">
-            One of three columns
+        <!--/col-->
+    </div>
+    <!--/row-->
+    <div class="row bg-dark p-3" *ngIf="listBuss">
+        <div class="col text-white text-center">
+            Bus Name
         </div>
-        <div class="col-sm">
-            One of three columns
+        <div class="col text-white text-center">
+            Bus Type
+        </div>
+        <div class="col text-white text-center">
+            Departure
+        </div>
+        <div class="col text-white text-center">
+            Arrival
+        </div>
+        <div class="col text-white text-center">
+            Available Seat
+        </div>
+        <div class="col text-white text-center">
+            Fare
+        </div>
+        <div class="col text-white text-center">
+            Select
         </div>
     </div>
+    <div class="row p-3 my-2 border border-dark bus-body" *ngFor="let bus of listBuss">
+        <div class="col">
+            {{bus.name}}
+        </div>
+        <div class="col">
+            {{bus.type}}
+        </div>
+        <div class="col">
+            <p class="text-center"> {{bus.startTime}}</p>
+            <p class="text-center">Bording Point</p>
+        </div>
+        <div class="col">
+            <p class="text-center">{{bus.EndTime}}</p>
+            <p class="text-center">Droping Point</p>
+        </div>
+        <div class="col">
+            <p class="text-center">{{bus.noOfSeats}}</p>
+            <p class="text-center">Seats Available</p>
+        </div>
+        <div class="col">
+            INR {{bus.price}}
+        </div>
+        <div class="col my-auto">
+            <button class="btn btn-success" (click)="ticketBooking()"> View Seats</button>
+
+        </div>
+    </div>
+
+
 </div>
+<!--/container-->

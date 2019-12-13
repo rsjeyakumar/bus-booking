@@ -1,22 +1,96 @@
 {
-  "user": [
+  "cities": [
     {
-      "username": "jeyakumar",
-      "password": "jeyakumar",
-      "emailid": "jeyakumar@gmail.com",
-      "id": 1
-    },
-    {
-      "username": "testname",
-      "password": "testname",
-      "emailid": "test@test.com",
+      "name": "Chennai",
       "id": 2
     },
     {
-      "username": "jjjjjjjjjjj",
-      "password": "jjjjjjjjjjjj",
-      "emailid": "jeyakumar@gmail.com",
+      "name": "Bangalore",
       "id": 3
+    },
+    {
+      "name": "hyd",
+      "id": 4
     }
-  ]
+  ],
+  "search": {
+    "message": "",
+    "statusCode": 200,
+    "source": "Bangalore",
+    "destination": "chennai",
+    "getList": [
+      {
+        "name": "orange travels",
+        "startTime": "10:00",
+        "EndTime": "18:00",
+        "type": "Ac Sleeper",
+        "noOfSeats": 10,
+        "price": 500
+      },
+      {
+        "name": "KPN travels",
+        "startTime": "16:00",
+        "EndTime": "18:00",
+        "type": "Ac Sleeper",
+        "noOfSeats": 10,
+        "price": 700
+      }
+    ]
+  },
+  "busBooking": {
+    "message": "",
+    "statusCode": 200,
+    "source": "Bangalore",
+    "Destination": "chennai",
+    "busList": [
+      {
+        "name": "orange travels",
+        "startTime": "10:00",
+        "EndTime": "18:00",
+        "type": "Ac Sleeper",
+        "noOfSeats": 10,
+        "price": 500
+      },
+      {
+        "name": "orange travels",
+        "startTime": "10:00",
+        "EndTime": "18:00",
+        "type": "Ac Sleeper",
+        "noOfSeats": 10,
+        "price": 500
+      }
+    ]
+  },
+  "bookings": {
+    "message": "",
+    "statusCode": 200,
+    "busName": "orange Travels",
+    "seatId": "333",
+    "seats": [
+      {
+        "seatId": "S1",
+        "bookingStaus": "Y"
+      },
+      {
+        "seatId": "S2",
+        "bookingStaus": "N"
+      }
+    ]
+  },
+  "bookings": {
+    "message": "",
+    "statusCode": 200,
+    "busName": "orange Travels",
+    "seatId": "333",
+    "seats": [
+      {
+        "seatId": "S1",
+        "bookingStaus": "Y"
+      },
+      {
+        "seatId": "S2",
+        "bookingStaus": "N"
+      }
+    ]
+  }
 }
